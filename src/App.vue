@@ -4,7 +4,7 @@
       <div class="col-sm-12">
         <nav-header @pageWasChanged="currentPage = $event"></nav-header>
         {{ currentPage }}
-        <card-front></card-front>
+        <component v-bind:is="currentPage"></component>
       </div>
     </div>
   </div>
