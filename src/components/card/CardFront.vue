@@ -4,18 +4,18 @@
 			<cc-text-input @displayTextChanged="textBoxValue1 = $event"></cc-text-input>
 			<cc-text-input @displayTextChanged="textBoxValue2 = $event"></cc-text-input>
 			<cc-text-input @displayTextChanged="textBoxValue3 = $event"></cc-text-input>
-			{{ textBoxValue1 }}
-			{{ textBoxValue2 }}
-			{{ textBoxValue3 }}
 		</div>
 		<div class="col-sm-6 card edit-display">
-
+			<cc-text-output></cc-text-output>
+			<cc-text-output></cc-text-output>
+			<cc-text-output></cc-text-output>
 		</div>
 	</div>
 </template>
 
 <script>
 import TextInput from './TextInput.vue';
+import TextOutput from './TextOutput.vue';
 
 export default {
 	data: function () {
@@ -27,6 +27,7 @@ export default {
 	},
 	components: {
 		ccTextInput: TextInput,
+		ccTextOutput: TextOutput,
 	}
 }
 </script>
