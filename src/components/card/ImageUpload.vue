@@ -26,11 +26,20 @@ export default {
             this.file = event.target.files[0]
             var storageRef = Firebase.storage().ref('user_uploads/' + this.file.name)
             storageRef.put(this.file)
+
+            var reader = new FileReader();
+            reader.readAsDataURL(this.file)
+
+            reader.onload = function (e) {
+                document.getElementById('image').src = e.target.result
+            }
         }
     }
 }
 </script>
 
-<style>
-
+<style scoped>
+    img {
+        max-width: 200px;
+    }
 </style>
