@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <h4>Upload image:</h4>
             <div class="form-group">
-                <input type="file" class="form-control-file" id="fileUpload">
+                <input type="file" class="form-control-file" id="fileUpload" @change="uploadFile">
             </div>
             <br>
             <img id="image">
@@ -13,8 +13,21 @@
 </template>
 
 <script>
+import Firebase from 'firebase'
+
 export default {
-    
+    data: function() {
+        return {
+            file: ''
+        }
+    },
+    methods: {
+        uploadFile: function (event) {
+            this.file = event.target.files[0]
+            var storageRef = Firebase.storage().ref('user_uploads/' + this.file.name)
+            storageRef.put(this.file)
+        }
+    }
 }
 </script>
 
