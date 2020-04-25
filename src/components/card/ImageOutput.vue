@@ -1,0 +1,34 @@
+<template>
+    <div class="image-container" :style="styleObject">
+        <img id="outputImage">{{displayImage}}
+    </div>
+</template>
+
+<script>
+export default {
+    props: {
+        displayImage: {
+            type: String
+        },
+        containerHeight: {
+            type: Number,
+            default: 200
+        }
+    },
+    computed: {
+        styleObject: function () {
+            return {
+                height: this.containerHeight + 'px'
+            }
+        }
+    }
+}
+</script>
+
+<style>
+.image-container {
+    border: 1px dotted grey;
+    overflow: hidden;
+    margin: 5px 0;
+}
+</style>
