@@ -1,5 +1,13 @@
 <template>
-    <div class="image-container" :style="styleObject">
+    <div class="image-container" 
+        :style="styleObject"
+        @mouseover="showOptions = true"
+        @mouseleave="showOptions = false">
+        <button type="button" 
+                class="btn btn-outline-danger btn-sm"
+                v-show="showOptions">
+            Remove Image
+        </button>
         <img id="outputImage">{{displayImage}}
     </div>
 </template>
@@ -15,6 +23,11 @@ export default {
         containerHeight: {
             type: Number,
             default: 200
+        }
+    },
+    data: function () {
+        return {
+            showOptions: false
         }
     },
     watch: {
@@ -41,5 +54,10 @@ export default {
     border: 1px dotted grey;
     overflow: hidden;
     margin: 5px 0;
+}
+
+button {
+    position: absolute;
+    z-index: 1;
 }
 </style>
