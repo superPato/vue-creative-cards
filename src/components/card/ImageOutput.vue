@@ -5,7 +5,8 @@
         @mouseleave="showOptions = false">
         <button type="button" 
                 class="btn btn-outline-danger btn-sm"
-                v-show="showOptions">
+                v-show="showOptions"
+                @click="clearImageProp">
             Remove Image
         </button>
         <img id="outputImage">{{displayImage}}
@@ -23,7 +24,8 @@ export default {
         containerHeight: {
             type: Number,
             default: 200
-        }
+        },
+        clearImageProp: Function
     },
     data: function () {
         return {
