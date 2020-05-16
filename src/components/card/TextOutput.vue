@@ -84,6 +84,7 @@ p {
     text-shadow: 2px 2px 2px #aaa;
     color: #4d4d4d;
     margin: 5px 0;
+    padding-top: 40px;
     border: 1px dotted grey;
     white-space: pre-line;
     overflow: hidden;
@@ -99,7 +100,7 @@ p {
 
 form {
     position: absolute;
-    border-botton: 1px dotted grey;
+    border-bottom: 1px dotted grey;
     margin-top: 10px;
     margin-bottom: 5px;
     padding-bottom: 5px;
