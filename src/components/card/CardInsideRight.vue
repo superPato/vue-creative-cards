@@ -1,27 +1,33 @@
 <template>
   <div class="row">
 		<div class="col-sm-6 card edit-area">
-            <cc-image-upload @displayImageChanged="imageName = $event"></cc-image-upload><hr>
+            <cc-text-input @displayTextChanged="textBoxValue1 = $event"></cc-text-input>
+            <cc-text-input @displayTextChanged="textBoxValue2 = $event"></cc-text-input>
+            <cc-text-input @displayTextChanged="textBoxValue3 = $event"></cc-text-input>
 		</div>
 		<div class="col-sm-6 card edit-display">
-			<cc-image-output :displayImage="imageName" :containerHeight="350" :clearImageProp="clearImage"></cc-image-output>
+			<cc-text-output :displayText="textBoxValue1" :containerHeight="240"></cc-text-output>
+			<cc-text-output :displayText="textBoxValue2" :containerHeight="240"></cc-text-output>
+			<cc-text-output :displayText="textBoxValue3" :containerHeight="240"></cc-text-output>
 		</div>
 	</div>
 </template>
 
 <script>
-import ImageUpload from './ImageUpload.vue';
-import ImageOutput from './ImageOutput.vue';
+import TextInput from './TextInput.vue'
+import TextOutput from './TextOutput.vue'
 
 export default {
 	data: function () {
 		return {
-			imageName: ''
+			textBoxValue1: '',
+			textBoxValue2: '',
+			textBoxValue3: '',
 		}
 	},
 	components: {
-		ccImageUpload: ImageUpload,
-		ccImageOutput: ImageOutput,
+		ccTextInput: TextInput,
+		ccTextOutput: TextOutput
 	}
 }
 </script>
